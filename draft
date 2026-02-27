@@ -1,0 +1,167 @@
+<p>
+    We're Quick Circle Pte Ltd, a tech company that specializes in IT consulting and software development.
+</p>
+<p>
+    With a deep understanding of the industry, we provide reliable
+    advice to help our customers achieve their goals in digital landscape.
+    We offer a range of IT consulting services, including Software
+    Development, Marketing Strategies and IT Business Consulting
+    Solutions. Throughout our work, we bring comprehensive support to
+    achieve great results, helping companies distinguish.
+</p>
+
+<p>
+    One company
+</p>
+<p>
+    provides the entire software development cycle
+</p>
+
+<p class="about--text">
+    Our approach ensures that we can find the
+    most appropriate and personalized solutions
+    for the specific needs of each digital business.
+    And we work closely with our clients, taking
+    the time to understand their businesses in
+    order to create strategies that will help them
+    achieve their goals.
+</p>
+
+.about-us-content-title {
+    display: inline-block;
+    margin-bottom: 32px;
+    text-align: start;
+    font-size: 44px;
+    font-weight: 700;
+}
+
+<div class="burger-menu">
+                        <a type="button" class="burger-menu">
+                            <img src="./icn/burger-icon.svg" alt="Burger Menu Icon">
+                        </a>
+                    </div>
+
+
+
+
+@media (min-width: 375px) and (max-width: 1024px) {
+
+    body {
+        padding: 0 !important;
+        margin: 0 12px !important;
+    }
+
+    h1 {
+    font-size: 48px;
+    font-weight: 700;
+    line-height: 1;
+    color: white;
+    }
+
+    .header {
+        padding-top: 24px !important;
+        height: 50px;
+        padding-bottom: 60px;
+    }
+
+    .burger-menu {
+        display: block;
+        flex-direction: column;
+        gap: 4px;
+        cursor: pointer;
+        position: relative;
+        top: 0;
+        left: 0;
+        background: inherit;
+        border: none;
+        z-index: 4;
+    }
+
+    .burger-menu span {
+        width: 20px;
+        height: 1.5px;
+        background-color: #fff;
+    }
+
+    .header-nav {
+
+        display: none;
+        position: absolute;
+        top: 60px;
+        left: 0;
+        width: 100%;
+        z-index: 3;
+        background-color: rgba(5, 7, 66, 0.79);
+    }
+
+    .nav-list {
+        flex-direction: column;
+        align-items: flex-start;
+        gap: 10px !important;
+        margin: 0;
+        padding: 0 20px;
+    }
+
+    .nav-item {
+        width: 100%;
+    }
+
+    .d-flex {
+        display: flex;
+        flex-direction: row;
+        align-items: center;
+    }
+
+    .header-logo {
+        margin-left: auto;
+        margin-right: auto;
+    }
+
+    .hero {
+        margin-top: 60px;
+        margin-bottom: 60px;
+    }
+
+    .hero-bg-image {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 750px;
+    background: url('../img/bg-image1.png') no-repeat center top;
+    background-size: cover;
+    z-index: -10;
+    }
+
+    .hero-content {
+    display: flex;
+    max-width: 1024px;
+    align-items: center;
+    justify-content: flex-start;
+    flex-direction: column;
+    margin: 0 auto;
+    }
+
+    .hero-content-title {
+    display: inline-block;
+    width: 100%;
+    margin-bottom: 55px;
+    }
+
+    .hero-content-title span {
+    font-size: 24px;
+    }
+
+    .hero-content-slogan--orange {
+    font-size: 48px !important;
+    color: #FFBF00;
+    font-weight: 700;
+    }
+}
+
+
+                    <div class="burger">
+                        <a type="button" class="burger-menu">
+                            <img src="./icn/burger-icon.svg" alt="Burger Menu Icon">
+                        </a>
+                    </div>
