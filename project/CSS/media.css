@@ -1,15 +1,15 @@
 @media (min-width: 375px) and (max-width: 991px) {
 
     body {
-        padding-right: 12px;
-        padding-left: 12px;
+        padding-right: 12px !important;
+        padding-left: 12px !important;
     }
 
     h1 {
-    font-size: 48px;
-    font-weight: 700;
-    line-height: 1;
-    color: white;
+        font-size: 48px;
+        font-weight: 700;
+        line-height: 1;
+        color: white;
     }
 
     .header {
@@ -36,7 +36,7 @@
     }
 
     .header.open .nav-menu{
-        transform: translateX(350px);
+        transform: translateX(400px);
     }
 
     .burger-btn--active {
@@ -87,7 +87,7 @@
     left: 0;
     width: 100%;
     height: 750px;
-    background: url('../img/bg-image1.png') no-repeat right top;
+    background: url('../assets/img/bg-image1.png') no-repeat right top;
     background-size: cover;
     z-index: -10;
     }
@@ -202,7 +202,7 @@
     .second-card--image {
         width: 350px;
         height: 503px;
-        background-image: url('/img/leaders-bg-mobile.png');
+        background-image: url('../assets/img/leaders-bg-mobile.png');
         background-position: center;
         background-repeat: no-repeat;
         background-size: cover;
