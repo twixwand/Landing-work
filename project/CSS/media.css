@@ -49,25 +49,22 @@
         position: absolute;
         left: 0;
         top: 0px;
-        padding: 55px 10px 10px 10px;
+        padding: 55px 10px 10px 35px;
         width: 110px;
         transition: transform 0.5s ease;
-    }
-
-    .nav-list {
-        display: block;
-        width: 100%;
-    }
-
-    .nav-item {
         background-color: rgba(28, 30, 135, 0.731);
         border: 1px solid black;
         border-radius: 15px;
-        padding: 2px;
+    }
+
+    .nav-list {
+        display: flex;
+        flex-direction: column;
+        gap: 8px;
     }
 
     .nav-item:hover {
-    transform: translateY(-5px);
+        transform: translateY(-5px);
     }
 
     .nav-link {
