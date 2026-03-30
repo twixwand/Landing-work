@@ -1,0 +1,25 @@
+{
+  "name": "landing_work",
+  "version": "1.0.0",
+  "description": "",
+  "homepage": "https://github.com/twixwand/Landing-work#readme",
+  "bugs": {
+    "url": "https://github.com/twixwand/Landing-work/issues"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/twixwand/Landing-work.git"
+  },
+  "license": "ISC",
+  "author": "",
+  "type": "commonjs",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "dev": "npx @tailwindcss/cli -i ./src/input.css -o ./dist/assets/main.css --watch"
+  },
+  "dependencies": {
+    "@tailwindcss/cli": "^4.2.1",
+    "tailwindcss": "^4.2.1"
+  }
+}

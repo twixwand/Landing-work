@@ -1,3 +1,137 @@
+-translate-y-4 transition-all duration-300 ease-in-out
+
+
+<div class="overflow-x-hidden lg:absolute lg:right-7 lg:top-62 lg:-translate-y-1/2 lg:translate-x-1/2">
+                                    <p class=" whitespace-nowrap text-[2.5rem] text-white | lg:text-[3.5rem] lg:-rotate-90">
+                                        IT Development
+                                    </p>
+                                </div>
+                                <div class="overflow-x-hidden lg:absolute lg:right-7 lg:top-70 lg:-translate-y-1/2 lg:translate-x-1/2">
+                                    <p class="whitespace-nowrap text-[2.5rem] text-white | lg:text-[3.5rem] lg:-rotate-90">
+                                        IT Consulting
+                                    </p>
+                                </div>
+
+
+
+<div class="flex flex-col gap-12 justify-center items-stretch w-full | lg:gap-6">
+                        <div class="flex w-full items-center">
+                            <div class="flex flex-col items-center gap-y-12 | lg:gap-x-16.25 lg:flex-row">
+                                <div class="w-full bg-[#F5F5FC] rounded-[40px] p-8 flex flex-col justify-center lg:w-7/12 lg:p-12">
+                                    <div class="inline-block max-w-187 m-6 | lg:m-12">
+                                        <p class="font-manrope text-[1rem] text-black mb-4 font-normal leading-relaxed | lg:text-xl">
+                                            We're Quick Circle Pte Ltd, a tech company that specializes in IT consulting and software development.
+                                        </p>
+                                        <p class="font-manrope text-[1rem] text-black font-normal leading-relaxed | lg:text-xl">
+                                            With a deep understanding of the industry, we provide reliable
+                                            advice to help our customers achieve their goals in digital landscape.
+                                            We offer a range of IT consulting services, including Software
+                                            Development, Marketing Strategies and IT Business Consulting
+                                            Solutions. Throughout our work, we bring comprehensive support to
+                                            achieve great results, helping companies distinguish.
+                                        </p>
+                                    </div>
+                                </div>
+                                <div class="w-full flex flex-col justify-center text-black | lg:w-5/12">
+                                    <div class="w-40.5 mb-10">
+                                        <img src="/icn/company-bg-icn.svg" alt="Quick Circle Logo">
+                                    </div>
+                                    <div class="text-black">
+                                        <h2 class="text-[2.5rem] text-nowrap font-semibold | lg:text-[64px]">
+                                            One company
+                                        </h2>
+                                        <h3 class="text-xl font-normal | lg:text-2xl">
+                                            provides the entire software development cycle
+                                        </h3>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="flex w-full items-center">
+                            <div class="flex flex-col gap-6 items-stretch | lg:flex-row ">                            
+                                <div class="w-full rounded-4xl overflow-hidden relative | lg:w-7/12">
+                                    <img src="/img/leaders.jpg" alt="" class="w-full h-full object-cover">
+                                </div>
+                                <div class="w-full bg-[#F5F5FC] rounded-[40px] p-8 flex flex-col justify-center | lg:w-5/12 lg:p-12">
+                                    <p class="font-manrope text-[1rem] text-black font-normal mb-4 | lg:text-xl">
+                                        Our approach ensures that we can find the
+                                        most appropriate and personalized solutions
+                                        for the specific needs of each digital business.
+                                        And we work closely with our clients, taking
+                                        the time to understand their businesses in
+                                        order to create strategies that will help them
+                                        achieve their goals.
+                                    </p>
+                                    <p class="font-manrope text-[1rem] text-black font-normal | lg:text-xl">
+                                        We want to see your success, and we will do everything possible to make it happen.Today we continue to work on ambitious IT projects of varying complexity and hill companies become leaders in their fields!
+                                    </p>
+                                </div>                               
+                            </div>
+                        </div>
+                    </div>
+
+
+
+
+sm:pt-12 sm:pr-21.5 sm:pb-42.5 sm:pl-12
+
+max-lg:px-3 xl:px-18
+
+
+
+<span class="text-2xl md:text-4xl lg:text-5xl text-white">
+
+    <span class="text-white"></span>
+
+<header class="w-full pt-6 lg:pt-7.25 pb-16 lg:pb-14.75" id="header">
+    <div class="container mx-auto max-lg:px-3 xl:px-18">
+        <div class="flex items-center justify-between relative max-lg:justify-center">
+            <div class="flex items-center">
+                <button type="button" class="lg:hidden absolute left-0 z-50" id="burger-btn">
+                    <img src="/icn/burger-icon.svg" alt="Open menu" class="w-8 h-8">
+                </button>
+
+                <a href="index.html" class="block max-lg:ml-auto">
+                    <img src="/icn/quick-circle-logo.svg" alt="Logo">
+                </a>
+            </div>
+
+            <nav class="hidden lg:flex flex-1 justify-center">
+                <ul class="flex flex-row gap-x-12">
+                    <li class="uppercase"><a class="text-white hover:text-gray-300 transition" href="#about-us">About us</a></li>
+                    <li class="uppercase"><a class="text-white hover:text-gray-300 transition" href="#services">Services</a></li>
+                    <li class="uppercase"><a class="text-white hover:text-gray-300 transition" href="#advantages">Advantages</a></li>
+                    <li class="uppercase"><a class="text-white hover:text-gray-300 transition" href="#contact">Contact</a></li>
+                </ul>
+            </nav>
+        </div>
+    </div>
+
+    <div id="mobile-menu" class="fixed inset-0 z-40 transform -translate-x-full transition-transform duration-300 ease-in-out lg:hidden">
+        <div id="menu-overlay" class="absolute inset-0 bg-black/50 backdrop-blur-sm"></div>
+        
+        <nav class="relative bg-slate-900 w-3/4 max-w-sm h-full p-8 shadow-xl">
+            <ul class="flex flex-col gap-y-6 mt-12">
+                <li class="uppercase border-b border-white/10 pb-2">
+                    <a class="text-white text-xl block" href="#about-us">About us</a>
+                </li>
+                <li class="uppercase border-b border-white/10 pb-2">
+                    <a class="text-white text-xl block" href="#services">Services</a>
+                </li>
+                <li class="uppercase border-b border-white/10 pb-2">
+                    <a class="text-white text-xl block" href="#advantages">Advantages</a>
+                </li>
+                <li class="uppercase border-b border-white/10 pb-2">
+                    <a class="text-white text-xl block" href="#contact">Contact</a>
+                </li>
+            </ul>
+        </nav>
+    </div>
+</header>
+
+
+
+
 <p>
     We're Quick Circle Pte Ltd, a tech company that specializes in IT consulting and software development.
 </p>
@@ -165,3 +299,8 @@
                             <img src="./icn/burger-icon.svg" alt="Burger Menu Icon">
                         </a>
                     </div>
+
+
+                            <link rel="stylesheet" href="/project/CSS/main.css">
+        <link rel="stylesheet" href="/project/CSS/media.css">
+        <link rel="stylesheet" href="/project/CSS/normalize.css">
