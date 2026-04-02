@@ -11,21 +11,21 @@
 
     <!--HEADER-->
 
-    <header class="w-full pt-6 pb-16 lg:pb-14.75 lg:pt-7.25" id="header">
-        <div class="container mx-auto px-3 xl:px-18">
+    <header class="bg-[#5832F1] w-full pt-6 pb-16 lg:pb-14.75 lg:pt-7.25" id="header">
+        <div class="container mx-auto px-3">
             <div class="flex items-center justify-between relative lg:justify-between">
-                <button type="button" id="burger-btn" class="relative w-7 h-6 block z-50 outline-none lg:hidden">
+                <button type="button" id="burger-btn" class="relative w-7 h-6 block z-50 outline-none cursor-pointer xl:hidden">
                     <span id="line-1" class="block absolute h-0.5 w-full bg-white rounded-full transform transition duration-300 ease-in-out top-0"></span>
                     <span id="line-2" class="block absolute h-0.5 w-full bg-white rounded-full transform transition duration-300 ease-in-out top-2.5"></span>
                     <span id="line-3" class="block absolute h-0.5 w-full bg-white rounded-full transform transition duration-300 ease-in-out top-5"></span>
                 </button>
-                <div class="max-lg:absolute max-lg:left-1/2 max-lg:-translate-x-1/2">
+                <div class="max-xl:absolute max-xl:left-1/2 max-xl:-translate-x-1/2">
                     <a href="index.html" class="block">
                         <img src="/icn/quick-circle-logo.svg" alt="Logo">
                     </a>
                 </div>
-                <nav class="hidden flex-1 justify-center lg:flex">
-                    <ul class="flex flex-row gap-x-12">
+                <nav class="hidden absolute left-1/2 -translate-x-1/2 whitespace-nowrap flex-1 xl:flex">
+                    <ul class="flex flex-row gap-x-12 text-xl">
                         <li class="uppercase">
                             <a class="text-white" href="#about-us">About us</a>
                         </li>
@@ -40,8 +40,8 @@
                         </li>
                     </ul>
                 </nav>
-                <div id="mobile-menu" class="hidden absolute top-full z-40 left-0 w-full px-4 py-6 mt-9 bg-[#660EFF] opacity-0 -translate-y-4 transition-all duration-300 ease-in-out lg:hidden">
-                    <ul class="flex flex-col items-center text-start gap-5 text-white font-normal text-xl uppercase sm:text-center">
+                <div id="mobile-menu" class="hidden absolute top-full z-40 left-0 w-full px-4 py-6 mt-9 bg-[#660EFF] opacity-0 -translate-y-4 transition-all duration-300 ease-in-out xl:hidden">
+                    <ul class="flex flex-col items-center text-start gap-5 text-white font-normal text-[16px] uppercase sm:text-center">
                         <li class="w-full">
                             <a class="text-white w-full block" href="#about-us">About us</a>
                         </li>
@@ -66,20 +66,20 @@
 
         <!-- HERO -->
 
-        <section class="pb-12 pt-16  lg:pt-14.5 lg:pb-34" id="hero">
-            <div class="bg-[#5832F1] absolute top-0 left-0 w-full h-195 -z-10"></div>
-            <div class="container mx-auto px-3 xl:px-18">
+        <section class="bg-[#5832F1] pb-12 pt-16  lg:pt-14.5 lg:pb-34" id="hero">
+            <!-- <div class="absolute top-0 left-0 w-full h-full -z-10"></div> -->
+            <div class="container mx-auto px-3">
                 <div class="flex max-w-full items-start justify-start flex-col">
-                    <h1 class="inline-block w-full mb-6 text-5xl text-[#FFBF00] font-extrabold leading-tight  lg:font-bold lg:text-8xl lg:mb-13.75">
-                        Technology partner<br><span class="text-2xl text-white  lg:text-5xl">for</span> <span class="text-white text-5xl  lg:text-8xl">Fast Growing businesses</span>
+                    <h1 class="inline-block w-full mb-6 text-5xl text-[#FFBF00] font-extrabold leading-14 lg:leading-25 lg:font-bold lg:text-8xl lg:mb-13.75">
+                        Technology partner<br><span class="text-2xl text-white lg:text-5xl">for</span> <span class="text-white text-5xl  lg:text-8xl">Fast Growing businesses</span>
                     </h1>
-                    <div class="font-inter font-normal text-lg text-white mb-16  md:text-xl lg:text-[32px] lg:mb-13.5">
+                    <div class="font-manrope font-normal text-[16px] text-white mb-16 md:text-xl lg:text-[32px] lg:mb-13.5">
                         <p>
                             Utilising the power of IT, data and software to help businesses implement technology to open up new opportunities and scale up profits
                         </p>
                     </div>
                     <div class="w-full text-center mt-16  lg:max-w-45 lg: lg:mt-0">
-                        <a class="w-full px-6 py-4 text-white block bg-[#FA268D] rounded-2xl text-lg  md:text-[2rem]" href="#">Let's go!</a>
+                        <a class="w-full px-6 py-4 text-white font-bold block bg-[#FA268D] rounded-2xl text-2xl lg:text-[32px]" href="#">Let's go!</a>
                     </div>
                 </div>
             </div>
@@ -88,18 +88,18 @@
         <!-- ABOUT US -->
 
         <section class="py-12 lg:py-16" id="about-us">
-            <div class="container mx-auto px-3 xl:px-18">
+            <div class="container mx-auto px-3">
                 <div class="flex max-w-full items-center flex-col  lg:items-start">
-                    <h2 class="font-manrope text-[2.5rem] text-black mb-8 font-semibold  lg:font-bold lg:text-[4rem]">
+                    <h2 class="font-manrope text-[40px] text-black mb-8 font-semibold  lg:font-bold lg:text-[64px]">
                         Let's get acquainted!
                     </h2>
                     <div class="flex flex-col gap-12 justify-center items-stretch w-full  lg:gap-6">
                         <div class="flex w-full flex-col items-stretch gap-6  lg:flex-row">
-                            <div class="w-full bg-[#F5F5FC] rounded-4xl px-4 py-6 flex flex-col justify-center leading-relaxe lg:w-7/12 lg:p-12">
-                                <p class="text-black font-normal font-manrope text-xl mb-4">
+                            <div class="w-full bg-[#F5F5FC] rounded-4xl px-4 py-6 flex flex-col justify-center leading-6 lg:w-7/12 lg:p-12">
+                                <p class="text-black font-normal font-manrope text-[16px] mb-4 lg:text-xl">
                                     We're Quick Circle Pte Ltd, a tech company that specializes in IT consulting and software development.
                                 </p>
-                                <p class="text-black font-normal font-manrope text-xl">
+                                <p class="text-black font-normal font-manrope text-[16px] lg:text-xl">
                                     With a deep understanding of the industry, we provide reliable
                                     advice to help our customers achieve their goals in digital landscape.
                                     We offer a range of IT consulting services, including Software
@@ -108,13 +108,13 @@
                                     achieve great results, helping companies distinguish.
                                 </p>
                             </div>
-                            <div class="w-full flex flex-col items-center text-black  lg:w-5/12 lg:justify-center lg:items-start lg:pl-10.25">
+                            <div class="w-full flex flex-col items-center text-black lg:w-5/12 lg:justify-center lg:items-start lg:pl-10.25">
                                 <div class="flex flex-col items-start">
                                     <div class="mb-8">
                                         <img src="/icn/company-bg-icn.svg" alt="Quick Circle Logo">
                                     </div>
                                     <div class="text-black">
-                                        <h2 class="text-[2.5rem] whitespace-normal font-semibold leading-tight lg:text-[64px]">
+                                        <h2 class="text-[40px] whitespace-normal font-semibold leading-tight lg:text-[64px]">
                                             One company
                                         </h2>
                                         <p class="text-xl font-semibold lg:text-2xl">
@@ -130,7 +130,7 @@
                                 <img src="/img/leaders-bg-mobile.jpg" alt="" class="max-w-88.25 h-full object-cover  md:hidden">
                             </div>
                             <div class="w-full bg-[#F5F5FC] rounded-[40px] px-4 py-6 flex flex-col justify-center  lg:w-5/12 lg:p-12">
-                                <p class="font-manrope text-xl text-black font-normal mb-4  ">
+                                <p class="font-manrope text-[16px] text-black font-normal mb-4 lg:text-xl">
                                     Our approach ensures that we can find the
                                     most appropriate and personalized solutions
                                     for the specific needs of each digital business.
@@ -139,7 +139,7 @@
                                     order to create strategies that will help them
                                     achieve their goals.
                                 </p>
-                                <p class="font-manrope text-xl text-black font-normal  ">
+                                <p class="font-manrope text-[16px] text-black font-normal lg:text-xl">
                                     We want to see your success, and we will do everything possible to make it happen.Today we continue to work on ambitious IT projects of varying complexity and hill companies become leaders in their fields!
                                 </p>
                             </div>                               
@@ -152,108 +152,108 @@
         <!-- SERVICES -->
 
         <section class="py-12  lg:pt-16 lg:pb-19.5" id="services">
-            <div class="container mx-auto px-3 xl:px-18">
+            <div class="container mx-auto px-3">
                 <div class="flex flex-col">
                     <header class="font-black mb-8">
-                        <h2 class="font-semibold text-[2.5rem]  lg:text-[4rem] lg:font-bold">
+                        <h2 class="font-semibold text-[40px] lg:text-[64px] lg:font-bold">
                             Our services in 2 direction
                         </h2>
-                        <p class="text-xl font-normal">
+                        <p class="text-[16px] font-normal lg:text-xl">
                             Advanced technologies and recommendations that help businesses stand out from their competitors
                         </p>
                     </header>
                     <div class="flex">
                         <div class="flex flex-col gap-6 flex-1 lg:flex-row">
-                            <div class="flex flex-col relative overflow-hidden py-12 px-4 border-red-500 border-2 bg-[#F5F5FC] rounded-4xl w-full h-full lg:w-1/2 lg:py-12 lg:pr-21.5 lg:pl-12">
-                                <div class="max-w-full grow relative z-20">
+                            <div class="flex flex-col relative py-12 px-4 bg-[#F5F5FC] rounded-4xl w-full lg:h-full lg:w-1/2 lg:pt-12 lg:pb-50 lg:pr-21.5 lg:pl-12">
+                                <div class="max-w-full relative z-20 min-w-0">
                                     <ul class="accordion-menu flex flex-col gap-8">
                                         <li class="accordion-item flex flex-col">
                                             <div class="accordion-trigger flex items-center cursor-pointer">
                                                 <img src="/icn/pointer-down.svg" alt="pointer-down" class="mr-3 ease-in-out transition-transform duration-300">
-                                                <a href="#" class="text-2xl block text-[#660EFF] pointer-events-none">Web Development</a>
+                                                <a href="#" class="text-xl font-semibold text-[#660EFF] pointer-events-none lg:text-2xl">Web Development</a>
                                             </div>
-                                            <p class="accordion-content text-xl font-normal mt-0 max-h-0 overflow-hidden transition-all duration-500 ease-in-out">
+                                            <p class="accordion-content text-[16px] font-normal mt-0 max-h-0 overflow-hidden transition-all duration-500 ease-in-out lg:text-xl lg:block">
                                                 Creating custom, user-friendly websites optimized for search engines and all devices, blending modern design with great functionality to help your company thrive online.
                                             </p>
                                         </li>
                                         <li class="accordion-item flex flex-col">
                                             <div class="accordion-trigger flex items-center cursor-pointer">
                                                 <img src="/icn/pointer-down.svg" alt="pointer-down" class="mr-3 ease-in-out transition-transform duration-300">
-                                                <a href="#" class="text-2xl text-[#660EFF]">Software Engineering</a>
+                                                <a href="#" class="text-xl font-semibold text-[#660EFF] pointer-events-none lg:text-2xl">Software Engineering</a>
                                             </div>
-                                            <p class="accordion-content text-xl font-normal mt-0 max-h-0 overflow-hidden transition-all duration-500 ease-in-out">
+                                            <p class="accordion-content text-[16px] font-normal mt-0 max-h-0 overflow-hidden transition-all duration-500 ease-in-out lg:text-xl lg:block">
                                                 Personal software solutions, including software development, integration of various systems with your web resources, uninterrupted productivity improvement and optimization of business processes.
                                             </p>
                                         </li>
                                         <li class="accordion-item flex flex-col">
                                             <div class="accordion-trigger flex items-center cursor-pointer">
                                                 <img src="/icn/pointer-down.svg" alt="pointer-down" class="mr-3 ease-in-out transition-transform duration-300">
-                                                <a href="#" class="text-2xl text-[#660EFF]">Mobile Development</a>
+                                                <a href="#" class="text-xl font-semibold text-[#660EFF] pointer-events-none lg:text-2xl">Mobile Development</a>
                                             </div>
-                                            <p class="accordion-content text-xl font-normal mt-0 max-h-0 overflow-hidden transition-all duration-500 ease-in-out">
+                                            <p class="accordion-content text-[16px] font-normal mt-0 max-h-0 overflow-hidden transition-all duration-500 ease-in-out lg:text-xl lg:block">
                                                 Creating intuitive, secure mobile apps for iOS and Android, prioritizing performance and user experience to meet your business goals efficiently.
                                             </p>
                                         </li>
                                         <li class="accordion-item flex flex-col">
                                             <div class="accordion-trigger flex items-center cursor-pointer">
                                                 <img src="/icn/pointer-down.svg" alt="pointer-down" class="mr-3 ease-in-out transition-transform duration-300">
-                                                <a href="#" class="text-2xl text-[#660EFF]">Technical Support</a>
+                                                <a href="#" class="text-xl font-semibold text-[#660EFF] pointer-events-none lg:text-2xl">Technical Support</a>
                                             </div> 
-                                            <p class="accordion-content text-xl font-normal mt-0 max-h-0 overflow-hidden transition-all duration-500 ease-in-out">
+                                            <p class="accordion-content text-[16px] font-normal mt-0 max-h-0 overflow-hidden transition-all duration-500 ease-in-out lg:text-xl lg:block">
                                                 We provide high-quality technical support to ensure success. This way we guarantee the smooth operation of the digital system, minimizing downtime and increasing productivity.
                                             </p>
                                         </li>
                                     </ul>
                                 </div>
-                                <div class="absolute top-1/2 right-0 -translate-y-1/2 rotate-90 origin-right z-10 pointer-events-none">
-                                    <p class="whitespace-nowrap text-4xl text-white select-none lg:text-[3.5rem] ">
+                                <div class="absolute z-10 pointer-events-none bottom-0 left-1/2 -translate-x-1/2 lg:bottom-auto lg:top-1/2 lg:right-0 lg:left-auto lg:-translate-y-1/2 lg:translate-x-[42%] lg:-rotate-90 lg:origin-center">
+                                    <p class="whitespace-nowrap text-[40px] text-white select-none lg:text-[64px]">
                                         IT Development
                                     </p>
                                 </div>
                             </div>
-                            <div class="flex flex-col relative overflow-hidden py-12 px-4 border-red-500 border-2 bg-[#F5F5FC] rounded-4xl w-full h-full lg:w-1/2 lg:py-12 lg:pr-21.5 lg:pl-12">
-                                <div class="max-w-full grow relative z-20">
+                            <div class="flex flex-col relative overflow-hidden py-12 px-4 bg-[#F5F5FC] rounded-4xl w-full lg:h-full lg:w-1/2 lg:py-12 lg:pr-21.5 lg:pl-12">
+                                <div class="w-full relative z-20 min-w-0">
                                     <ul class="accordion-menu flex flex-col gap-8">
                                         <li class="accordion-item flex flex-col">
                                             <div class="accordion-trigger flex items-center cursor-pointer">
                                                 <img src="/icn/pointer-down.svg" alt="pointer-down" class="mr-3 ease-in-out transition-transform duration-300">
-                                                <a href="#" class="text-2xl block text-[#660EFF] pointer-events-none">Comprehensive IT Consulting Solutions</a>
+                                                <a href="#" class="text-xl font-semibold text-[#660EFF] pointer-events-none lg:text-2xl">Comprehensive IT Consulting Solutions</a>
                                             </div>
-                                            <p class="accordion-content text-xl font-normal mt-0 max-h-0 overflow-hidden transition-all duration-500 ease-in-out">
+                                            <p class="accordion-content text-[16px] font-normal mt-0 max-h-0 overflow-hidden transition-all duration-500 ease-in-out lg:text-xl">
                                                 A wide range of recommendations for various aspects of IT strategy and digital transformation to meet the diverse needs of modern businesses. Whether you need assistance with IT project management, system analysis, or technology implementation, our team can solve problems of any complexity and help you innovate your business.
                                             </p>
                                         </li>
                                         <li class="accordion-item flex flex-col">
                                             <div class="accordion-trigger flex items-center cursor-pointer">
                                                 <img src="/icn/pointer-down.svg" alt="pointer-down" class="mr-3 ease-in-out transition-transform duration-300">
-                                                <a href="#" class="text-2xl text-[#660EFF] text-wrap pointer-events-none">Software Development Consultation Services</a>
+                                                <a href="#" class="text-xl font-semibold text-[#660EFF] text-wrap pointer-events-none lg:text-2xl">Software Development Consultation Services</a>
                                             </div>
-                                            <p class="accordion-content text-xl font-normal mt-0 max-h-0 overflow-hidden transition-all duration-500 ease-in-out">
+                                            <p class="accordion-content text-[16px] font-normal mt-0 max-h-0 overflow-hidden transition-all duration-500 ease-in-out lg:text-xl">
                                                 Expert guidance and strategic advice customized to your specific requirements. Whether you are starting a new project or looking to optimize an existing one, our team of experienced consultants will be there to assist you every step of the way. We provide advice on best practices, methodologies, and insights into emerging technologies and trends to help you make informed decisions that will lead to success in your software projects.
                                             </p>
                                         </li>
                                         <li class="accordion-item flex flex-col">
                                             <div class="accordion-trigger flex items-center cursor-pointer">
                                                 <img src="/icn/pointer-down.svg" alt="pointer-down" class="mr-3 ease-in-out transition-transform duration-300">
-                                                <a href="#" class="text-2xl text-[#660EFF] pointer-events-none">Marketing</a>
+                                                <a href="#" class="text-xl font-semibold text-[#660EFF] pointer-events-none lg:text-2xl">Marketing</a>
                                             </div>
-                                            <p class="accordion-content text-xl font-normal mt-0 max-h-0 overflow-hidden transition-all duration-500 ease-in-out">
+                                            <p class="accordion-content text-[16px] font-normal mt-0 max-h-0 overflow-hidden transition-all duration-500 ease-in-out lg:text-xl">
                                                 Modern tech and analytics-driven marketing strategies to effectively promote products and services.
                                             </p>
                                         </li>
                                         <li class="accordion-item flex flex-col">
                                             <div class="accordion-trigger flex items-center cursor-pointer">
                                                 <img src="/icn/pointer-down.svg" alt="pointer-down" class="mr-3 ease-in-out transition-transform duration-300">
-                                                <a href="#" class="text-2xl text-[#660EFF] pointer-events-none">IT Business Consulting Solutions</a>
+                                                <a href="#" class="text-xl font-semibold text-[#660EFF] pointer-events-none lg:text-2xl">IT Business Consulting Solutions</a>
                                             </div>
-                                            <p class="accordion-content text-xl font-normal mt-0 max-h-0 overflow-hidden transition-all duration-500 ease-in-out">
+                                            <p class="accordion-content text-[16px] font-normal mt-0 max-h-0 overflow-hidden transition-all duration-500 ease-in-out lg:text-xl">
                                                 Qualified consultations with IT specialists will help you understand the ins and outs of the digital world. Whether you need to optimize your infrastructure, simplify operations, or boost efficiency, we've got you covered with a customized strategy tailored to the specific needs of your business. And we'll be there every step of the way to help you put this strategy into action, keeping it running smoothly.
                                             </p>
                                         </li>
                                     </ul>
                                 </div>
-                                <div class="absolute top-1/2 right-0 -translate-y-1/2 rotate-90 origin-right z-10 pointer-events-none">
-                                    <p class="whitespace-nowrap text-[2.5rem] text-white select-none lg:text-[3.5rem]">
+                                <div class="absolute z-10 pointer-events-none bottom-0 left-1/2 -translate-x-1/2 lg:bottom-auto lg:top-1/2 lg:right-0 lg:left-auto lg:-translate-y-1/2 lg:translate-x-[39%] lg:-rotate-90 lg:origin-center">
+                                    <p class="whitespace-nowrap text-[40px] text-white select-none lg:text-[64px]">
                                         IT Consulting
                                     </p>
                                 </div>
@@ -267,31 +267,31 @@
         <!-- ADVANTAGES -->
 
         <section class="py-12 lg:pt-16 lg:pb-23" id="advantages">
-            <div class="container mx-auto px-3 xl:px-18">
+            <div class="container mx-auto px-3">
                 <div class="flex max-w-full items-start justify-start flex-col">
-                    <h2 class="font-manrope text-[2.5rem] text-black mb-8 font-semibold  lg:text-[4rem] lg:font-bold">
+                    <h2 class="font-manrope text-[40px] text-black mb-8 font-semibold  lg:text-[64px] lg:font-bold">
                         Why Quick Circle?
                     </h2>
                     <div class="flex flex-col gap-8">
                         <div class="flex flex-col gap-y-8  lg:flex-row lg:gap-x-27.5">
                             <div class="gap-y-6 w-full  lg:flex lg:flex-row lg:">
-                                <img class="mb-6  lg:mr-6 lg:w-49 lg:h-49 lg:mb-0" src="/img/number-1.png" alt="">
+                                <img class="mb-6 w-32 h-32 lg:mr-6 lg:w-49 lg:h-49 lg:mb-0 object-cover" src="/img/number-1.png" alt="">
                                 <div class="inline-block text-black text-xl">
                                     <h3 class="text-xl mb-2 font-semibold  lg:text-2xl">
                                         Human-Centric Approach
                                     </h3>
-                                    <p class="text-[1rem]  lg:text-xl">
+                                    <p class="text-[16px]  lg:text-xl">
                                         We start by putting people at the center of our approach, ensuring that our solutions resonate with them and deliver meaningful results.
                                     </p>
                                 </div>
                             </div>
                             <div class="gap-y-6 w-full  lg:flex lg:flex-row lg:max-w-1/2">
-                                <img class="mb-6  lg:mr-6 lg:w-49 lg:h-49 lg:mb-0" src="/img/number-2.png" alt="">
+                                <img class="mb-6 w-32 h-32 lg:mr-6 lg:w-49 lg:h-49 lg:mb-0 object-cover" src="/img/number-2.png" alt="">
                                 <div class="text-black text-xl  lg:flex-row">
                                     <h3 class="text-xl mb-2 font-semibold  lg:text-2xl">
                                         Quality First
                                     </h3>
-                                    <p class="text-[1rem]  lg:text-xl">
+                                    <p class="text-[16px]  lg:text-xl">
                                         Quality is our top priority. We weave it into every aspect of our work to ensure success.
                                     </p>
                                 </div>
@@ -299,23 +299,23 @@
                         </div>
                         <div class="flex flex-col  lg:flex-row gap-y-8 lg:gap-x-27.5">
                             <div class="gap-y-6 w-full  lg:flex lg:flex-row-reverse lg:max-w-1/2">
-                                <img class="mb-6  lg:ml-6 lg:w-49 lg:h-49 lg:mb-0" src="/img/number-3.png" alt="">
+                                <img class="mb-6 w-32 h-32 lg:ml-6 lg:w-49 lg:h-49 lg:mb-0 object-cover" src="/img/number-3.png" alt="">
                                 <div class="text-black text-xl  lg:flex-row">
                                     <h3 class="text-xl mb-2 font-semibold  lg:text-2xl">
                                         Skilled Team
                                     </h3>
-                                    <p class="text-[1rem]  lg:text-xl">
+                                    <p class="text-[16px]  lg:text-xl">
                                         Our team consists of skilled professionals who truly care about the success of your project.
                                     </p>
                                 </div>
                             </div>
                             <div class="gap-y-6 w-full  lg:flex lg:flex-row-reverse lg:max-w-1/2">
-                                <img class="mb-6  lg:ml-6 lg:w-49 lg:h-49 lg:mb-0" src="/img/number-4.png" alt="">
+                                <img class="mb-6 w-32 h-32 lg:ml-6 lg:w-49 lg:h-49 lg:mb-0 object-cover" src="/img/number-4.png" alt="">
                                 <div class=" text-black text-xl  lg:flex-row">
                                     <h3 class="text-xl mb-2 font-semibold  lg:text-2xl">
                                         Proven Track Record
                                     </h3>
-                                    <p class="text-[1rem]  lg:text-xl">
+                                    <p class="text-[16px]  lg:text-xl">
                                         With years of experience in the industry, we have proven our ability to overcome challenges and achieve results.
                                     </p>
                                 </div>
@@ -330,28 +330,28 @@
     <!--FOOTER-->
     
     <footer class="pt-12  lg:pt-16.5" id="footer">
-        <div class="container mx-auto px-3 xl:px-18">
+        <div class="container mx-auto px-3">
             <div class="bg-[#5832F1] rounded-t-[48px] py-12 px-3  lg:pt-18.25 lg:px-21.5 lg:pb-9.25">
                 <header class="text-start mb-12 text-white">
-                    <h2 class="text-[2.5rem] font-semibold  lg:text-[4rem]">
+                    <h2 class="text-[40px] font-semibold  lg:text-[64px]">
                         What are you waiting for?
                     </h2>
-                    <p class="text-[1rem] font-normal  lg:text-xl">
+                    <p class="text-[16px] font-normal  lg:text-xl">
                         Take the next step. Let our experts help you build the right solution.
                     </p>
                 </header>
-                <form action="" method="post" class="mb-12">
+                <form action="" method="post" class="mb-6">
                     <div class="flex flex-col gap-y-6  lg:flex-row lg:gap-x-7.75 lg:mb-4">
-                        <input type="name" id="name" placeholder="Name" class="p-4 text-white border border-white rounded-lg bg-transparent  lg:w-full">
-                        <input type="tel" id="tel" placeholder="Phone" class="p-4 text-white border border-white rounded-lg bg-transparent  lg:w-full">
-                        <input type="email" id="email" placeholder="Email" class="p-4 text-white border border-white rounded-lg bg-transparent  lg:w-full">
+                        <input type="name" id="name" placeholder="Name" class="p-4 text-white border border-white rounded-lg bg-transparent outline-white lg:w-full">
+                        <input type="tel" id="tel" placeholder="Phone" class="p-4 text-white border border-white rounded-lg bg-transparent outline-white lg:w-full">
+                        <input type="email" id="email" placeholder="Email" class="p-4 text-white border border-white rounded-lg bg-transparent outline-white lg:w-full">
                     </div>
-                    <label class="items-start gap-x-2 flex text-sm text-white/70  max-lg:hidden">
+                    <label class="items-center gap-x-2 flex text-sm text-white/70  max-lg:hidden">
                         <input checked type="checkbox" class="w-5 h-5 bg-amber-400 rounded-4xl">
-                        <span>By clicking on the button, you agree to the <a href="#" class="underline">processing ofpersonal data</a></span>
+                        <span class="text-[16px]">By clicking on the button, you agree to the <a href="#" class="underline">processing ofpersonal data</a></span>
                     </label>
                     <div class="flex justify-center mt-6 mb-2">
-                        <a href="#" class="w-full px-4 py-6 text-white text-center text-2xl font-bold bg-[#FA268D] rounded-xl text-nowrap  lg:max-w-93.5 lg:text-[2rem]">
+                        <a href="#" class="w-full px-4 py-6 text-white text-center text-2xl font-bold bg-[#FA268D] rounded-2xl text-nowrap  lg:max-w-93.5 lg:text-[32px] lg:mb-30.5">
                             Speak with an Expert
                         </a>
                     </div>
@@ -359,24 +359,25 @@
                         <input checked type="checkbox" class="w-5 h-5 bg-amber-400 rounded-4xl">
                         <span>By clicking on the button, you agree to the <a href="#" class="underline">processing ofpersonal data</a></span>
                     </label>
+                    <p class="text-white justify-center hidden lg:flex">
+                        © QUICK CIRCLE PTE. LTD.
+                    </p>
                 </form>
                 <div class="border-t-2 border-white text-white ">
-                    <div class="flex flex-col pt-6  lg:flex-row">
-                        <div class="items-start justify-start mb-12  lg:mr-19.25 lg:mb-0">
-                            <img src="/icn/quick-circle-logo.svg" alt="">
-                        </div>
-                        <ul class="flex flex-col items-start justify-between font-manrope text-[1rem] font-normal  lg:flex-row">
-                            <li class="flex flex-row mb-8  lg:mb-0 lg:mr-19.25">
+                    <div class="flex flex-col pt-6 items-start lg:flex-row lg:items-center">
+                        <img src="/icn/quick-circle-logo.svg" alt="" class="items-start justify-start mb-12 lg:mr-19.25 lg:mb-0">
+                        <ul class="flex flex-col items-start justify-between font-manrope gap-x-19.25 text-[16px] font-normal lg:text-xl lg:flex-row lg:items-center">
+                            <li class="flex flex-row mb-8 lg:mb-0">
                                 <img src="/icn/email.svg" alt="" class="mr-2">
-                                <a href="#" class="">info@quickcircle.ltd</a>
+                                <a href="mailto:info@quickcircle.ltd">info@quickcircle.ltd</a>
                             </li>
-                            <li class="flex row mb-8 whitespace-nowrap  lg:mb-0 lg:mr-19.25">
+                            <li class="flex row mb-8 whitespace-nowrap lg:mb-0">
                                 <img src="/icn/phone.svg" alt="" class="mr-2">
-                                <a href="#" class="">+371 25320515</a>
+                                <a href="tel:+37125320515">+371 25320515</a>
                             </li>
                             <li class="flex flex-row items-start  ">
                                 <img src="/icn/map.svg" alt="" class="mr-2">
-                                <a href="#">531 Upper cross street #02-11 Hong Lim Complex Singapore</a>
+                                <address>531 Upper cross street #02-11 Hong Lim Complex Singapore</address>
                             </li>
                         </ul>
                     </div>

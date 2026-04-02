@@ -1,7 +1,7 @@
 @import "tailwindcss";
 
 @font-face {
-    src: url("../assets/fonts/Manropewoff2") format("woff2");
+    src: url("/fonts/Manrope.woff2") format("woff2");
     font-family: 'Manrope';
     font-style: normal;
     font-weight: 100 900;
@@ -10,7 +10,7 @@
 
 @font-face {
     font-family: 'Inter';
-    src: url("../fonts/Inter_28pt-Regular.woff2");
+    src: url("/fonts/Inter_28pt-Regular.woff2");
     font-style: normal;
     font-weight: 400;
 }
