@@ -2,7 +2,8 @@ import * as THREE from 'three';
 
 const scene = new THREE.Scene();
 
-const camera = new THREE.PerspectiveCamera(75, 
+const camera = new THREE.PerspectiveCamera(
+    75, 
     window.innerWidth / window.innerHeight, 
     0.1, 
     100,
@@ -33,7 +34,7 @@ if (container) {
 
 const globeGroup = new THREE.Group();
 
-const sphereGeom = new THREE.SphereGeometry(2.7, 10, 10); 
+const sphereGeom = new THREE.SphereGeometry(2.7, 15, 15); 
 const sphereMat = new THREE.MeshBasicMaterial({ 
     color: 0xffffff, 
     wireframe: true, 
