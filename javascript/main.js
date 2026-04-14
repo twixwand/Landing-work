@@ -1,3 +1,5 @@
+// бургер
+
 const burgerBtn = document.getElementById('burger-btn');
 const mobileMenu = document.getElementById('mobile-menu');
 const menuLinks = mobileMenu.querySelectorAll('a');
@@ -42,6 +44,8 @@ burgerBtn.addEventListener('click', toggleMenu);
 menuLinks.forEach(link => {
     link.addEventListener('click', toggleMenu);
 })
+
+// аккордеон
 
 const allAccordions = document.querySelectorAll('.accordion-menu');
 

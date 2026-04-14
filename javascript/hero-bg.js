@@ -1,7 +1,14 @@
 import * as THREE from 'three';
 
 const scene = new THREE.Scene();
-const camera = new THREE.PerspectiveCamera(80, window.innerWidth / window.innerHeight, 0.1, 1000);
+
+const camera = new THREE.PerspectiveCamera(75, 
+    window.innerWidth / window.innerHeight, 
+    0.1, 
+    100,
+);
+camera.position.z = 5;
+
 const renderer = new THREE.WebGLRenderer({ antialias: true, alpha: true });
 renderer.setPixelRatio(Math.min(window.devicePixelRatio, 2));
 
@@ -26,7 +33,7 @@ if (container) {
 
 const globeGroup = new THREE.Group();
 
-const sphereGeom = new THREE.SphereGeometry(2, 12, 12); 
+const sphereGeom = new THREE.SphereGeometry(2.7, 10, 10); 
 const sphereMat = new THREE.MeshBasicMaterial({ 
     color: 0xffffff, 
     wireframe: true, 
@@ -36,17 +43,69 @@ const sphereMat = new THREE.MeshBasicMaterial({
 const globe = new THREE.Mesh(sphereGeom, sphereMat);
 globeGroup.add(globe);
 
-const innerGeom = new THREE.IcosahedronGeometry(0.8, 1); 
-const innerMat = new THREE.MeshBasicMaterial({ 
-    color: 0xffffff, 
-    wireframe: true, 
-    transparent: true, 
-    opacity: 0.4 
-});
-const innerCore = new THREE.Mesh(innerGeom, innerMat);
-globeGroup.add(innerCore);
+const totalLines = 45;
+const xRange = 1.4;
+const rRange = 3.5;
 
-globeGroup.position.set(3, 0.5, 1); 
+const p1 = 0.4;
+const p2 = 2.0;
+
+let countLines = 0;
+for (let j = 0; j < totalLines; j++) {
+    const t = j / (totalLines - 1);
+    const x = (t - 0.5) * 2 * xRange;
+    
+    const shape = Math.max(0, 1.0 - Math.pow(Math.abs(x) / xRange, p1)); 
+    const yBoundary = Math.pow(shape, p2) * rRange; 
+
+    if (yBoundary > 0.01) countLines++;
+}
+
+const starVertices = new Float32Array(countLines * 2 * 2 * 3); 
+
+let finalIdx = 0;
+for (let j = 0; j < totalLines; j++) {
+    const t = j / (totalLines - 1);
+    const val = (t - 0.5) * 2 * xRange;
+    
+    const shape = Math.max(0, 1.0 - Math.pow(Math.abs(val) / xRange, p1));
+    const yBoundary = Math.pow(shape, p2) * rRange;
+
+    if (yBoundary > 0.01) {
+
+        starVertices[finalIdx++] = val;
+        starVertices[finalIdx++] = -yBoundary; 
+        starVertices[finalIdx++] = 0;
+
+        starVertices[finalIdx++] = val; 
+        starVertices[finalIdx++] = yBoundary;  
+        starVertices[finalIdx++] = 0;
+
+        starVertices[finalIdx++] = 0; 
+        starVertices[finalIdx++] = -yBoundary; 
+        starVertices[finalIdx++] = val;
+
+        starVertices[finalIdx++] = 0; 
+        starVertices[finalIdx++] = yBoundary;  
+        starVertices[finalIdx++] = val;
+    }
+}
+
+const starLinesGeom = new THREE.BufferGeometry();
+starLinesGeom.setAttribute('position', new THREE.BufferAttribute(starVertices, 3));
+
+const starLinesMat = new THREE.LineBasicMaterial({
+    color: 0xffffff,
+    transparent: true,
+    opacity: 0.8,
+    blending: THREE.AdditiveBlending
+});
+
+const starCore = new THREE.LineSegments(starLinesGeom, starLinesMat);
+globeGroup.add(starCore);
+
+globeGroup.position.set(4, 0.3, 1);
+globeGroup.rotation.x = -Math.PI / 1.1;
 scene.add(globeGroup);
 
 const planeGeom = new THREE.PlaneGeometry(40, 30, 15, 15);
@@ -80,7 +139,9 @@ function animate() {
     const time = Date.now() * 0.001;
 
     globe.rotation.y += 0.0005;
-    innerCore.rotation.y -= 0.001;
+
+    starCore.rotation.y += 0.001;
+    starCore.material.opacity = 0.8 + Math.sin(Date.now() * 0.005) * 0.2;
 
     const positions = planeGeom.attributes.position.array;
     for (let i = 0; i < positions.length; i += 3) {
@@ -98,5 +159,5 @@ function animate() {
 
 window.addEventListener('resize', updateSize);
 updateSize();
-camera.position.z = 4;
+
 animate();
