@@ -41,7 +41,7 @@ const sphereMat = new THREE.MeshPhongMaterial({
     shininess: 100,
     wireframe: true, 
     transparent: true, 
-    opacity: 0.25
+    opacity: 0.4
 });
 const globe = new THREE.Mesh(sphereGeom, sphereMat);
 globeGroup.add(globe);
@@ -113,20 +113,23 @@ scene.add(globeGroup);
 
 const planeGeom = new THREE.PlaneGeometry(40, 30, 15, 15);
 const edgesGeom = new THREE.EdgesGeometry(planeGeom);
+
 const lineMat = new THREE.LineBasicMaterial({ 
     color: 0xffffff,
     transparent: true, 
     opacity: 0.2
 });
 const planeLines = new THREE.LineSegments(edgesGeom, lineMat);
+planeLines.renderOrder = 1;
 
 const pointsMat = new THREE.PointsMaterial({ 
-    color: 0xffffff, 
+    color: 'white', 
     size: 0.1, 
     transparent: true, 
     opacity: 0.8
 });
 const planePoints = new THREE.Points(planeGeom, pointsMat);
+planePoints.renderOrder = 0;
 
 const floorGroup = new THREE.Group();
 floorGroup.add(planeLines);
@@ -142,7 +145,6 @@ function animate() {
     const time = Date.now() * 0.001;
 
     globe.rotation.y += 0.005;
-
     starCore.rotation.y += 0.005;
 
     const positions = planeGeom.attributes.position.array;
@@ -155,7 +157,7 @@ function animate() {
 
     planeLines.geometry.dispose();
     planeLines.geometry = new THREE.EdgesGeometry(planeGeom);
-
+    
     renderer.render(scene, camera);
 }
 
