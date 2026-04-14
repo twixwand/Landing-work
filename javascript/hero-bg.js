@@ -34,9 +34,11 @@ if (container) {
 
 const globeGroup = new THREE.Group();
 
-const sphereGeom = new THREE.SphereGeometry(2.7, 15, 15); 
-const sphereMat = new THREE.MeshBasicMaterial({ 
-    color: 0xffffff, 
+const sphereGeom = new THREE.SphereGeometry(3, 15, 15); 
+const sphereMat = new THREE.MeshPhongMaterial({ 
+    color: 'white',
+    emissive: 'white',
+    shininess: 100,
     wireframe: true, 
     transparent: true, 
     opacity: 0.4
@@ -79,7 +81,7 @@ for (let j = 0; j < totalLines; j++) {
         starVertices[finalIdx++] = 0;
 
         starVertices[finalIdx++] = val; 
-        starVertices[finalIdx++] = yBoundary;  
+        starVertices[finalIdx++] = yBoundary;
         starVertices[finalIdx++] = 0;
 
         starVertices[finalIdx++] = 0; 
@@ -106,7 +108,7 @@ const starCore = new THREE.LineSegments(starLinesGeom, starLinesMat);
 globeGroup.add(starCore);
 
 globeGroup.position.set(4, 0.3, 1);
-globeGroup.rotation.x = -Math.PI / 1.1;
+globeGroup.rotation.x = -Math.PI / 1.07;
 scene.add(globeGroup);
 
 const planeGeom = new THREE.PlaneGeometry(40, 30, 15, 15);
@@ -139,10 +141,9 @@ function animate() {
     requestAnimationFrame(animate);
     const time = Date.now() * 0.001;
 
-    globe.rotation.y += 0.0005;
+    globe.rotation.y += 0.005;
 
-    starCore.rotation.y += 0.001;
-    starCore.material.opacity = 0.8 + Math.sin(Date.now() * 0.005) * 0.2;
+    starCore.rotation.y += 0.005;
 
     const positions = planeGeom.attributes.position.array;
     for (let i = 0; i < positions.length; i += 3) {
