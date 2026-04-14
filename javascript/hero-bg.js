@@ -41,14 +41,14 @@ const sphereMat = new THREE.MeshPhongMaterial({
     shininess: 100,
     wireframe: true, 
     transparent: true, 
-    opacity: 0.4
+    opacity: 0.25
 });
 const globe = new THREE.Mesh(sphereGeom, sphereMat);
 globeGroup.add(globe);
 
-const totalLines = 45;
+const totalLines = 35;
 const xRange = 1.4;
-const rRange = 3.5;
+const rRange = 3;
 
 const p1 = 0.4;
 const p2 = 2.0;
@@ -100,7 +100,7 @@ starLinesGeom.setAttribute('position', new THREE.BufferAttribute(starVertices, 3
 const starLinesMat = new THREE.LineBasicMaterial({
     color: 0xffffff,
     transparent: true,
-    opacity: 0.8,
+    opacity: 0.5,
     blending: THREE.AdditiveBlending
 });
 
@@ -116,7 +116,7 @@ const edgesGeom = new THREE.EdgesGeometry(planeGeom);
 const lineMat = new THREE.LineBasicMaterial({ 
     color: 0xffffff,
     transparent: true, 
-    opacity: 0.5
+    opacity: 0.2
 });
 const planeLines = new THREE.LineSegments(edgesGeom, lineMat);
 
