@@ -6,23 +6,28 @@ const camera = new THREE.PerspectiveCamera(
     75, 
     window.innerWidth / window.innerHeight, 
     0.1, 
-    100,
+    200,
 );
-camera.position.z = 5;
+camera.position.z = 7.5;
 
 const renderer = new THREE.WebGLRenderer({ antialias: true, alpha: true });
 renderer.setPixelRatio(Math.min(window.devicePixelRatio, 2));
 
 function updateSize() {
     const wrapper = document.getElementById('top-section-wrapper');
-    if (wrapper) {
-        const width = window.innerWidth;
-        const height = wrapper.offsetHeight;
-        camera.aspect = width / height;
-        camera.updateProjectionMatrix();
-        renderer.setSize(width, height);
-    }
+    if (!wrapper) return;
+
+    const width = wrapper.clientWidth;
+    const height = wrapper.clientHeight;
+    
+    renderer.setSize(width, height);
+    renderer.setPixelRatio(Math.min(window.devicePixelRatio, 2));
+
+    camera.aspect = width / height;
+    camera.updateProjectionMatrix();
 }
+
+updateSize();
 
 const container = document.getElementById('three-bg-container');
 if (container) {
@@ -43,6 +48,8 @@ const sphereMat = new THREE.MeshPhongMaterial({
     transparent: true, 
     opacity: 0.4
 });
+
+
 const globe = new THREE.Mesh(sphereGeom, sphereMat);
 globeGroup.add(globe);
 
@@ -107,19 +114,67 @@ const starLinesMat = new THREE.LineBasicMaterial({
 const starCore = new THREE.LineSegments(starLinesGeom, starLinesMat);
 globeGroup.add(starCore);
 
-globeGroup.position.set(4, 0.3, 1);
 globeGroup.rotation.x = -Math.PI / 1.07;
-scene.add(globeGroup);
 
-const planeGeom = new THREE.PlaneGeometry(40, 30, 15, 15);
-const edgesGeom = new THREE.EdgesGeometry(planeGeom);
+function adaptiveGlobe() {
+    const width = window.innerWidth;
+    if(width >= 768) {
+        globeGroup.position.set(4, 0.3, 3);
+    } else {
+        globeGroup.position.set(2.4, 0.3, 2.5);
+    }
+}
+
+scene.add(globeGroup);
+adaptiveGlobe();
+
+const cols = 16, rows = 15;
+const planeGeom = new THREE.PlaneGeometry(40, 30, cols, rows);
+const planePos = planeGeom.attributes.position;
+
+const segCount = (cols + 1) * rows * 2 + cols * (rows + 1) * 2;
+const linePositions = new Float32Array(segCount * 2 * 3);
+const lineIdx = new Uint32Array(segCount * 2);
+let li = 0, vIdx = 0;
+
+for (let j = 0; j <= rows; j++) {
+    for (let i = 0; i <= cols; i++) {
+        const idx = j * (cols + 1) + i;
+        lineIdx[vIdx * 2] = li;
+        lineIdx[vIdx * 2 + 1] = li + 1;
+        if (i < cols) {
+            linePositions[li * 3] = planePos.getX(idx);
+            linePositions[li * 3 + 1] = planePos.getY(idx);
+            linePositions[li * 3 + 2] = planePos.getZ(idx);
+            linePositions[li * 3 + 3] = planePos.getX(idx + 1);
+            linePositions[li * 3 + 4] = planePos.getY(idx + 1);
+            linePositions[li * 3 + 5] = planePos.getZ(idx + 1);
+            li += 2;
+        }
+        if (j < rows) {
+            lineIdx[vIdx * 2] = li;
+            lineIdx[vIdx * 2 + 1] = li + 1;
+            linePositions[li * 3] = planePos.getX(idx);
+            linePositions[li * 3 + 1] = planePos.getY(idx);
+            linePositions[li * 3 + 2] = planePos.getZ(idx);
+            linePositions[li * 3 + 3] = planePos.getX(idx + cols + 1);
+            linePositions[li * 3 + 4] = planePos.getY(idx + cols + 1);
+            linePositions[li * 3 + 5] = planePos.getZ(idx + cols + 1);
+            li += 2;
+        }
+        vIdx++;
+    }
+}
+
+const lineGeom = new THREE.BufferGeometry();
+lineGeom.setAttribute('position', new THREE.BufferAttribute(linePositions, 3));
 
 const lineMat = new THREE.LineBasicMaterial({ 
     color: 0xffffff,
     transparent: true, 
     opacity: 0.2
 });
-const planeLines = new THREE.LineSegments(edgesGeom, lineMat);
+const planeLines = new THREE.LineSegments(lineGeom, lineMat);
 planeLines.renderOrder = 1;
 
 const pointsMat = new THREE.PointsMaterial({ 
@@ -137,7 +192,7 @@ floorGroup.add(planePoints);
 floorGroup.rotation.x = -Math.PI / 5;
 floorGroup.rotation.y = -Math.PI / 20;
 floorGroup.rotation.z = -Math.PI / 10;
-floorGroup.position.set(1, -8.5, 1);
+floorGroup.position.set(1, -8.5, 5);
 scene.add(floorGroup);
 
 function animate() {
@@ -147,21 +202,46 @@ function animate() {
     globe.rotation.y += 0.005;
     starCore.rotation.y += 0.005;
 
-    const positions = planeGeom.attributes.position.array;
+    const positions = planePos.array;
     for (let i = 0; i < positions.length; i += 3) {
         const x = positions[i];
         const y = positions[i + 1];
         positions[i + 2] = Math.sin(x * 0.3 + time) * 0.6 + Math.cos(y * 0.6 + time) * 0.6;
     }
-    planeGeom.attributes.position.needsUpdate = true;
+    planePos.needsUpdate = true;
 
-    planeLines.geometry.dispose();
-    planeLines.geometry = new THREE.EdgesGeometry(planeGeom);
+    const linePos = lineGeom.attributes.position.array;
+    li = 0;
+    for (let j = 0; j <= rows; j++) {
+        for (let i = 0; i <= cols; i++) {
+            const idx = j * (cols + 1) + i;
+            if (i < cols) {
+                linePos[li * 3] = planePos.getX(idx);
+                linePos[li * 3 + 1] = planePos.getY(idx);
+                linePos[li * 3 + 2] = planePos.getZ(idx);
+                linePos[li * 3 + 3] = planePos.getX(idx + 1);
+                linePos[li * 3 + 4] = planePos.getY(idx + 1);
+                linePos[li * 3 + 5] = planePos.getZ(idx + 1);
+                li += 2;
+            }
+            if (j < rows) {
+                linePos[li * 3] = planePos.getX(idx);
+                linePos[li * 3 + 1] = planePos.getY(idx);
+                linePos[li * 3 + 2] = planePos.getZ(idx);
+                linePos[li * 3 + 3] = planePos.getX(idx + cols + 1);
+                linePos[li * 3 + 4] = planePos.getY(idx + cols + 1);
+                linePos[li * 3 + 5] = planePos.getZ(idx + cols + 1);
+                li += 2;
+            }
+        }
+    }
+    lineGeom.attributes.position.needsUpdate = true;
     
     renderer.render(scene, camera);
 }
 
-window.addEventListener('resize', updateSize);
-updateSize();
-
+window.addEventListener('resize', () => {
+    updateSize();
+    adaptiveGlobe();
+});
 animate();
